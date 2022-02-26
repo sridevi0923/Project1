@@ -1,0 +1,39 @@
+we can do asynchronuous calls by using promises and call back
+
+Reactive Programming for javascript - RxJS
+
+Observables
+Subscriber  --- subscribe provide different functionality
+stream of data
+subject
+
+subscribe : 3 Action
+1. next()
+2. complete()
+3. error()
+
+import { Observable } from 'rxjs';
+
+
+// creation of observable in ts file
+
+myOb = new Observable(function(x){
+   x.next("It is observale example1......")
+  // asynchorouns call
+   setTimeout(function()
+   x.next("It is observale example2......")
+   x.next("It is observale example3......")
+   x.next("It is observale example4......"),5000)})
+   x.complete();
+})
+
+bthclick(){
+  this.myOb.subscribe({
+     next(x){     	c.log(x)	}
+     error(x){     	c.log(x)	}
+     complete(x){     	c.log(x)	}
+  })
+
+}
+
+// access the observable data in html file
